@@ -16,7 +16,9 @@ const port = process.env.PORT || 3001;
 //Middle wear
 
 app.use(express.json())
-app.use(cors());
+app.use(express.static("public"));
+app.use(cors({ origin: "http://localhost:3000" }));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 
@@ -24,7 +26,7 @@ app.use(morgan('dev'));
 
 
 //routes
-app.get("/hello", controller.hello);
+app.get("/redirect", controller.hello);
 
 
 
