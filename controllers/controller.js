@@ -1,7 +1,7 @@
 
 
 function hello(req,res){
-    res.redirect("/select");
+    res.send('hello world')
 }
 
 
