@@ -2,9 +2,10 @@ const express = require('express')
 const app = express()
 const cors = require("cors");
 const morgan = require('morgan')
+require('dotenv').config()
 
 // controllers
-const controller = require("./controllers/controller")
+const spotify = require("./controllers/spotifyAuth");
 
 
 
@@ -26,7 +27,9 @@ app.use(morgan('dev'));
 
 
 //routes
-app.get("/redirect", controller.hello);
+
+//  Gets the spotify token and secret
+app.get("/api/auth", spotify.spotifyAuth);
 
 
 
