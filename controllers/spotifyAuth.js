@@ -37,7 +37,7 @@ const spotifyAuth = async (req,res)=>{
     const username = "22rhj2mcszox72nnewbr4swri";
     const response = await fetch(
       // Endpoint
-      `https://api.spotify.com/v1/users/${username}/playlists?limit=1&offset=0`,
+      `https://api.spotify.com/v1/users/${username}/playlists?limit=50&offset=0`,
       {
         method: "GET",
         headers: { Authorization: "Bearer " + access_token },
@@ -102,6 +102,10 @@ async function getSongs(songs) {
         songAndArtist = {
           spotifyArtistandSong: [songName, artist],
         };
+
+        //!Logic returns hrere
+        //TODO get name of play list
+        console.log(songAndArtist);
         return songAndArtist;
     });
     // how to get name =====> data[0].track.name
