@@ -2,7 +2,13 @@
 const fetchPlaylist = require('../helper/fetchPlaylist')
 
 const spotifyAuth = async (req,res)=>{
-  fetchPlaylist();
+
+  try{
+      const playlistData = await fetchPlaylist();
+      res.status(200).send(playlistData);
+  }catch(e){
+    console.log("spotifyAuth.js error",e)
+  }
 }
  
 

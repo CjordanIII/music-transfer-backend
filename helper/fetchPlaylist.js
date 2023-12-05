@@ -1,4 +1,4 @@
-
+// decency's
 const getSongs = require('./getSongs')
 const getToken = require('./getToken')
 const getTrackInfo = require('./getTrackInfo')
@@ -12,7 +12,7 @@ const getTrackInfo = require('./getTrackInfo')
         name: playlist.name,
         src: playlist.tracks.href,
       }));
-      getSongs(playlists);
+      return getSongs(playlists);
     } catch (error) {
       console.error("An error occurred:", error);
     }

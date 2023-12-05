@@ -36,21 +36,19 @@ async function getSongs(songs) {
         songName: songName,
         artist: artist,
       };
-      //!Logic returns hrere
-      //TODO get name of play list
+
       return songAndArtist;
     });
 
     const playlistName = songs.map((data) => data.name);
-  
+    //created playlist data
     const playlist = {
       playlistName: playlistName,
       songName: songAndArtistData.map((data) => data.songName),
       artist: songAndArtistData.map((data) => data.artist),
     };
-    console.log(playlist);
-    // how to get name =====> data[0].track.name
-    //how to get artist =====> data[0].track.artists[0]
+    //!Logic returns here
+  
     return playlist;
   } catch (e) {
     console.log("An error has occurred: " + e);
